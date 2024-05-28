@@ -4,21 +4,12 @@ const cors = require("cors");
 const todoModel = require("./Model/todoModel");
 
 const app = express();
-app.use(
-  cors({
-    origin: "*",
-  })
-);
-const options = [
-  cors({
-    origin: "*",
-    methods: "*",
-    allowedHeaders: ["Content-Type", "Authorization"],
-    credentials: true,
-  }),
-];
-
-app.use(options);
+app.use(cors({
+  origin: "*",
+  methods: "*",
+  allowedHeaders: ["Content-Type", "Authorization"],
+  credentials: true,
+}));
 app.use(express.json());
 
 mongoose
