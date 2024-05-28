@@ -4,13 +4,7 @@ const cors = require("cors");
 const todoModel = require("./Model/todoModel");
 
 const app = express();
-app.use(cors(
-  {
-    origin: "https://deploy-mern-frontend-eta.vercel.app",
-  methods: ["POST", "GET", "PATCH", "DELETE"],
-    credentials:true
-  }
-));
+app.use(cors());
 app.use(express.json());
 
 mongoose
