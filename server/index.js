@@ -35,9 +35,10 @@ mongoose
 
 const port = 5000;
 
-app.post("/", (req, res) => {
-  res.send('Server is running')
+app.get("/", (req, res) => {
+  res.send("Server is running");
 });
+
 app.post("/add", (req, res) => {
   const task = req.body.task;
   todoModel.create({ task: task }).then((result) => {

@@ -32,15 +32,19 @@ const Form = () => {
   };
 
   const handleUnDone = async (id) => {
-    const result = await axios.patch(`https://deploy-mern-xi.vercel.app/undone/${id}`);
+    const result = await axios.patch(
+      `https://deploy-mern-xi.vercel.app/undone/${id}`
+    );
     setTodos(result.data);
   };
 
   const handleDel = async (id) => {
-    const result = await axios.delete(`https://deploy-mern-xi.vercel.app/${id}`);
+    const result = await axios.delete(
+      `https://deploy-mern-xi.vercel.app/${id}`
+    );
     setTodos(result.data);
   };
-
+  
   return (
     <div className="main">
       <div>
@@ -75,8 +79,7 @@ const Form = () => {
                         handleUnDone(todo._id);
                       }}
                       className="done"
-                      >
-                    
+                    >
                       {todo.task}
                     </p>
                     <p
