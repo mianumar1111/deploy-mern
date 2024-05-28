@@ -4,11 +4,28 @@ const cors = require("cors");
 const todoModel = require("./Model/todoModel");
 
 const app = express();
-app.use(cors());
+app.use(
+  cors({
+    origin: "*",
+  })
+);
+const options = [
+  cors({
+    origin: "*",
+    methods: "*",
+    allowedHeaders: ["Content-Type", "Authorization"],
+    credentials: true,
+  }),
+];
+
+app.use(options);
 app.use(express.json());
 
 mongoose
-  .connect("mongodb+srv://mianumar1111:1234%405678@project1.bppcdpc.mongodb.net/todo", {})
+  .connect(
+    "mongodb+srv://mianumar1111:1234%405678@project1.bppcdpc.mongodb.net/todo",
+    {}
+  )
   .then(() => {
     console.log("Connected to MongoDB");
   })
