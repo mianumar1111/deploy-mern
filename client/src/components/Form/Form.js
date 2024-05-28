@@ -9,7 +9,7 @@ const Form = () => {
 
   useEffect(() => {
     const fetchTodos = async () => {
-      const result = await axios.get("http://localhost:5000/get");
+      const result = await axios.get("https://deploy-mern-xi.vercel.app/get");
       setTodos(result.data);
     };
 
@@ -27,17 +27,17 @@ const Form = () => {
   };
 
   const handleDone = async (id) => {
-    const result = await axios.patch(`http://localhost:5000/${id}`);
+    const result = await axios.patch(`https://deploy-mern-xi.vercel.app/${id}`);
     setTodos(result.data);
   };
 
   const handleUnDone = async (id) => {
-    const result = await axios.patch(`http://localhost:5000/undone/${id}`);
+    const result = await axios.patch(`https://deploy-mern-xi.vercel.app/undone/${id}`);
     setTodos(result.data);
   };
 
   const handleDel = async (id) => {
-    const result = await axios.delete(`http://localhost:5000/${id}`);
+    const result = await axios.delete(`https://deploy-mern-xi.vercel.app/${id}`);
     setTodos(result.data);
   };
 
