@@ -21,7 +21,7 @@ const Form = () => {
     if (task === "") {
       alert("Please fill the task");
     } else {
-      axios.post("http://localhost:5000/add", { task: task });
+      axios.post("https://deploy-mern-xi.vercel.app/add", { task: task });
       setTask("");
     }
   };
