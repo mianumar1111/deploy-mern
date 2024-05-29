@@ -41,7 +41,7 @@ app.get("/get", (req, res) => {
   });
 });
 
-app.patch("/:id", (req, res) => {
+app.put("/:id", (req, res) => {
   const { id } = req.params;
   todoModel
     .findByIdAndUpdate(id, { status: true }, { new: true })
@@ -53,7 +53,7 @@ app.patch("/:id", (req, res) => {
     });
 });
 
-app.patch("/undone/:id", (req, res) => {
+app.put("/undone/:id", (req, res) => {
   const { id } = req.params;
   todoModel
     .findByIdAndUpdate(id, { status: false }, { new: true })
