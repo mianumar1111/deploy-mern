@@ -28,14 +28,14 @@ const Form = () => {
 
   const handleDone = async (id) => {
     console.log('id',id)
-    const result = await axios.patch(
+    const result = await axios.put(
       `https://deploy-mern-xi.vercel.app/${id}`
     );
     setTodos(result.data);
   };
 
   const handleUnDone = async (id) => {
-    const result = await axios.patch(
+    const result = await axios.put(
       `https://deploy-mern-xi.vercel.app/undone/${id}`
     );
     setTodos(result.data);
