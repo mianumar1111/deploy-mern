@@ -7,13 +7,9 @@ const app = express();
 app.use(
   cors({
     origin: "*",
-    methods: "*",
-    allowedHeaders: ["Content-Type", "Authorization"],
-    credentials: true,
   })
 );
 app.use(express.json());
-
 mongoose
   .connect(
     "mongodb+srv://mianumar1111:1234%405678@project1.bppcdpc.mongodb.net/todo",

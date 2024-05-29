@@ -27,7 +27,10 @@ const Form = () => {
   };
 
   const handleDone = async (id) => {
-    const result = await axios.patch(`https://deploy-mern-xi.vercel.app/${id}`);
+    console.log('id',id)
+    const result = await axios.patch(
+      `https://deploy-mern-xi.vercel.app/${id}`
+    );
     setTodos(result.data);
   };
 
@@ -44,7 +47,7 @@ const Form = () => {
     );
     setTodos(result.data);
   };
-  
+
   return (
     <div className="main">
       <div>
